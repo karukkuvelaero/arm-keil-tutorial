@@ -5,6 +5,9 @@ int main(void)
 {
 	RCC->AHB1ENR |= 0xF;
 	
+	//Enabling IRQ clock
+	RCC->APB2ENR |= (1<<14);
+	
 	//Pin PD12
 	
 	GPIOD->MODER |= 0b01<<(12*2);
@@ -43,11 +46,35 @@ int main(void)
 	GPIOA->PUPDR |= 0b10;
 	
 	
+	//Enable interrupt configuration register
+	SYSCFG->EXTICR[0] &= 0xFFF0;
+	
+	//enable interrupt configuration register
+	EXTI->IMR |= 0x1;
+	
+	//select the interrupt trigger
+	EXTI-> FTSR |= 0x1;
+	
+	//NVIC Enable
+	__disable_irq();
+	NVIC_EnableIRQ(EXTI0_IRQn);
+	
+	__enable_irq();
+	
+	
 	while (1)
 	{
+		/*
 	 if (GPIOA->IDR & 0b1)
 		 GPIOD->ODR |= (1<<14);
 	 else 
 		 GPIOD->ODR &= ~(1<<14);
+		*/
   }
+}
+
+void EXTI0_IRQHandler()
+{
+	EXTI->PR |= 1;
+	GPIOD->ODR |= (1<<14);
 }
