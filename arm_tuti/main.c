@@ -39,21 +39,20 @@ int main(void)
 	GPIOA->MODER &= ~0b1;
 
 	
-	GPIOA->OTYPER &= ~0b11;
-	GPIOA->OTYPER |= 0b00;
+
 	
 	GPIOA->PUPDR &= ~0b11;
-	GPIOA->PUPDR |= 0b10;
+	GPIOA->PUPDR |= 0b10 << (0*2);
 	
 	
 	//Enable interrupt configuration register
-	SYSCFG->EXTICR[0] &= 0xFFF0;
+	SYSCFG->EXTICR[0] &= ~(0x1);
 	
 	//enable interrupt configuration register
 	EXTI->IMR |= 0x1;
 	
 	//select the interrupt trigger
-	EXTI-> FTSR |= 0x1;
+	EXTI-> RTSR |= 0x1;
 	
 	//NVIC Enable
 	__disable_irq();
@@ -64,12 +63,9 @@ int main(void)
 	
 	while (1)
 	{
-		/*
-	 if (GPIOA->IDR & 0b1)
-		 GPIOD->ODR |= (1<<14);
-	 else 
+		
 		 GPIOD->ODR &= ~(1<<14);
-		*/
+		
   }
 }
 

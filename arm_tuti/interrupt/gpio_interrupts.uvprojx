@@ -23,7 +23,7 @@
           <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F411VETx$CMSIS\Flash\STM32F4xx_512.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32F411VETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h</RegisterFile>
+          <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>gpio_input</OutputName>
+          <OutputName>gpio_interrupts</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -260,17 +260,17 @@
                 <Size>0x0</Size>
               </XRAM>
               <OCR_RVCT1>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT2>
               <OCR_RVCT3>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT3>
@@ -280,7 +280,7 @@
                 <Size>0x80000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
-                <Type>1</Type>
+                <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </OCR_RVCT5>
@@ -392,6 +392,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>headers</GroupName>
+          <Files>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\gpio.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -406,9 +421,24 @@
       <filter>
         <targetInfos/>
       </filter>
-      <package name="CMSIS" vendor="ARM" version="6.1.0">
+      <package name="CMSIS" vendor="ARM">
         <targetInfos>
-          <targetInfo name="stm32f411" versionMatchMode="fixed"/>
+          <targetInfo name="stm32f411"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-Compiler" vendor="ARM">
+        <targetInfos>
+          <targetInfo name="stm32f411"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-Driver_STM32" vendor="ARM">
+        <targetInfos>
+          <targetInfo name="stm32f411"/>
+        </targetInfos>
+      </package>
+      <package name="Cortex_DFP" vendor="ARM">
+        <targetInfos>
+          <targetInfo name="stm32f411"/>
         </targetInfos>
       </package>
       <package name="STM32F4xx_DFP" vendor="Keil" version="2.17.1">
