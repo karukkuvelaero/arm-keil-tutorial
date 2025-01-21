@@ -8,7 +8,7 @@ Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: Karukkuvel Raj D
 Killis Bird LLP
 User-based license: Keil MDK Community (non-commercial free of charge)
-Valid until: Jun 1 2033. Cached until: Jan 27 2025
+Valid until: Jun 1 2033. Cached until: Jan 13 2025
  
 Tool Versions:
 Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.40.0.3
@@ -24,26 +24,26 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\karukkuvelRajDeivasu\Documents\arm-keil-tutorial\arm_tuti\interrupt\gpio_interrupts.uvprojx
-Project File Date:  01/06/2025
+C:\Users\karukkuvelRajDeivasu\Documents\arm-keil-tutorial\arm_tuti\creating_library\gpio_lib.uvprojx
+Project File Date:  01/17/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Keil\ARM\ARM\ARMCLANG\Bin'
-Rebuild target 'stm32f411'
-compiling system_stm32f4xx.c...
-assembling startup_stm32f411xe.s...
+Rebuild target 'Target 1'
 compiling main.c...
-gpio.c(125): warning: unused variable 'pin' [-Wunused-variable]
-  125 |         char pin = PortPin % 16;
+compiling system_stm32f4xx.c...
+gpio.c(150): warning: unused variable 'pin' [-Wunused-variable]
+  150 |         char pin = PortPin % 16;
       |              ^~~
-gpio.c(126): warning: unused variable 'GPIO' [-Wunused-variable]
-  126 |         GPIO_TypeDef * GPIO = get_GPIO(port);
+gpio.c(151): warning: unused variable 'GPIO' [-Wunused-variable]
+  151 |         GPIO_TypeDef * GPIO = get_GPIO(port);
       |                        ^~~~
 2 warnings generated.
 compiling gpio.c...
+assembling startup_stm32f411xe.s...
 linking...
-Program Size: Code=1440 RO-data=424 RW-data=0 ZI-data=1632  
-".\Objects\gpio_interrupts.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=1188 RO-data=424 RW-data=0 ZI-data=1632  
+".\Objects\gpio_lib.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,7 +60,7 @@ Package Vendor: Keil
    * Component: Startup Version: 2.6.3
 
 <h2>Collection of Component include folders:</h2>
-  ./RTE/_stm32f411
+  ./RTE/_Target_1
   C:/Keil/PACKS/ARM/CMSIS/6.1.0/CMSIS/Core/Include
   C:/Keil/PACKS/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
@@ -69,11 +69,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.1.0
 
    * Component: Keil::Device:Startup@2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
       Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
-      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

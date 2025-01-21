@@ -24,26 +24,38 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\karukkuvelRajDeivasu\Documents\arm-keil-tutorial\arm_tuti\interrupt\gpio_interrupts.uvprojx
-Project File Date:  01/06/2025
+C:\Users\karukkuvelRajDeivasu\Documents\arm-keil-tutorial\arm_tuti\interrupt_lib\interrupt_lib.uvprojx
+Project File Date:  01/20/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Keil\ARM\ARM\ARMCLANG\Bin'
 Rebuild target 'stm32f411'
-compiling system_stm32f4xx.c...
-assembling startup_stm32f411xe.s...
-compiling main.c...
-gpio.c(125): warning: unused variable 'pin' [-Wunused-variable]
-  125 |         char pin = PortPin % 16;
+../creating_library/gpio.c(150): warning: unused variable 'pin' [-Wunused-variable]
+  150 |         char pin = PortPin % 16;
       |              ^~~
-gpio.c(126): warning: unused variable 'GPIO' [-Wunused-variable]
-  126 |         GPIO_TypeDef * GPIO = get_GPIO(port);
+../creating_library/gpio.c(151): warning: unused variable 'GPIO' [-Wunused-variable]
+  151 |         GPIO_TypeDef * GPIO = get_GPIO(port);
       |                        ^~~~
-2 warnings generated.
+../creating_library/gpio.c(191): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  191 |         SYSCFG->EXTICR[exti] &= ~(0xF << extiPin*4);
+      |                       ^~~~~
+../creating_library/gpio.c(192): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  192 |         SYSCFG->EXTICR[exti] |= (port << extiPin*4);
+      |                       ^~~~~
+../creating_library/gpio.c(290): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  290 |         SYSCFG->EXTICR[exti] &= ~(0xF<<extiPin*4);
+      |                       ^~~~~
+../creating_library/gpio.c(286): warning: unused variable 'Port' [-Wunused-variable]
+  286 |         char Port = PortPin/16;
+      |              ^~~~
+6 warnings generated.
 compiling gpio.c...
+compiling main.c...
+assembling startup_stm32f411xe.s...
+compiling system_stm32f4xx.c...
 linking...
-Program Size: Code=1440 RO-data=424 RW-data=0 ZI-data=1632  
-".\Objects\gpio_interrupts.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=1752 RO-data=424 RW-data=0 ZI-data=1632  
+".\Objects\interrupt_lib.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
