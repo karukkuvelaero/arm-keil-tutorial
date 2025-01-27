@@ -1,0 +1,93 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.40.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Karukkuvel Raj D
+Killis Bird LLP
+User-based license: Keil MDK Community (non-commercial free of charge)
+Valid until: Jun 1 2033. Cached until: Jan 29 2025
+ 
+Tool Versions:
+Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.40.0.3
+Toolchain Path:  C:\Keil\ARM\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
+CPU DLL:         SARMCM3.DLL V5.40.0.3
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\karukkuvelRajDeivasu\Documents\arm-keil-tutorial\arm_tuti\clock_tuti\clock_start.uvprojx
+Project File Date:  01/23/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.22', folder: 'C:\Keil\ARM\ARM\ARMCLANG\Bin'
+Rebuild target 'stm32f411'
+gpio.c(155): warning: unused variable 'pin' [-Wunused-variable]
+  155 |         char pin = PortPin % 16;
+      |              ^~~
+gpio.c(156): warning: unused variable 'GPIO' [-Wunused-variable]
+  156 |         GPIO_TypeDef * GPIO = get_GPIO(port);
+      |                        ^~~~
+gpio.c(196): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  196 |         SYSCFG->EXTICR[exti] &= ~(0xF << extiPin*4);
+      |                       ^~~~~
+gpio.c(197): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  197 |         SYSCFG->EXTICR[exti] |= (port << extiPin*4);
+      |                       ^~~~~
+gpio.c(295): warning: array subscript is of type 'char' [-Wchar-subscripts]
+  295 |         SYSCFG->EXTICR[exti] &= ~(0xF<<extiPin*4);
+      |                       ^~~~~
+gpio.c(291): warning: unused variable 'Port' [-Wunused-variable]
+  291 |         char Port = PortPin/16;
+      |              ^~~~
+6 warnings generated.
+compiling gpio.c...
+compiling clock.c...
+compiling main.c...
+assembling startup_stm32f411xe.s...
+compiling system_stm32f4xx.c...
+linking...
+Program Size: Code=1000 RO-data=424 RW-data=0 ZI-data=1632  
+".\Objects\clock_start.axf" - 0 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil::STM32F4xx_DFP@2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_stm32f411
+  C:/Keil/PACKS/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Keil/PACKS/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
